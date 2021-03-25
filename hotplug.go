@@ -85,7 +85,7 @@ func (ctx *Context) HotplugRegisterCallbackEvent(vendorID, productID uint16, eve
 
 	rc := C.libusb_hotplug_register_callback(
 		ctx.libusbContext,
-		event,
+		C.int(event),
 		C.LIBUSB_HOTPLUG_NO_FLAGS,
 		vID,
 		pID,
